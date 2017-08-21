@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 var runAjax = document.querySelector('#run_ajax');
 var runPingPong = document.querySelector('#run_ping_pong');
 var runCount = document.querySelector('#run_count');
+var runTime = document.querySelector('#run_time');
 
 runAjax.addEventListener ( 'click', function() {
     $.ajax( {
@@ -47,6 +48,22 @@ runPingPong.addEventListener ( 'click', function() {
        newElement.innerHTML = data;
        section.append( newElement );
    });
+});
+
+ runTime.addEventListener ( 'click', function() {
+     $.ajax( {
+       url: 'http://first-ajax-api.herokuapp.com/time',
+       method: 'GET',
+       data: {timezone: 'Asia/Kolkata'},
+       dataType: 'text',
+     }).done(function(data) {
+       var newElement = document.createElement ('div');
+       var section = document.querySelector('#step8')
+       newElement.innerHTML = data;
+       section.append( newElement );
+   });
 
  });
+
+
 });
