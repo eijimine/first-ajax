@@ -71,7 +71,7 @@ runPingPong.addEventListener ( 'click', function() {
        method: 'GET',
        dataType: 'HTML',
      }).done(function(data) {
-       var newElement = document.createElement ('li');
+       var newElement = document.createElement ('span');
        var section = document.querySelector('#car')
        newElement.innerHTML = data;
        section.append( newElement );
